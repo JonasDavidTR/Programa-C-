@@ -288,28 +288,27 @@ void efetuarSaque(){
 
 void efetuarDeposito(){
 	if(contador_contas > 0){
-			int numero;
-			printf("Informe o número da conta: \n");
-			scanf("%d", &numero);
+		int numero;
+		printf("Informe o número da conta: \n");
+		scanf("%d", &numero);
 
-			Conta conta = buscarContaPorNumero(numero);
+		Conta conta = buscarContaPorNumero(numero);
 
-			if(conta.numero == numero){
-				float valor;
-				printf("Informe o valor do depósito: \n");
-				scanf("%f", &valor);
+		if(conta.numero == numero){
+			float valor;
+			printf("Informe o valor do depósito: \n");
+			scanf("%f", &valor);
 
-				depositar(conta, valor);
-			}else{
-				printf("Não foi encontrada uma conta com o número %d\n", numero);
-			}
-
-
+			depositar(conta, valor);
 		}else{
-			printf("Ainda não existem contas para depósito.\n");
+			printf("Não foi encontrada uma conta com o número %d\n", numero);
 		}
-		sleep(2);
-		menu();
+
+	}else{
+		printf("Ainda não existem contas para depósito.\n");
+	}
+	sleep(2);
+	menu();
 }
 
 void efetuarTransferencia(){
